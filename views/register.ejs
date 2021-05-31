@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <h1>
+      Registro:
+    </h1>
+
+    <div>
+      <form action="/user/register" method="POST">
+        <div>
+          <input type="text" name="name" placeholder="Nombre Completo">        
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+          <input class="re-password" type="password" name="repassword" placeholder="Repetir password">
+        </div>
+        <div>
+          <button>
+            Register
+          </button>
+        </div>
+      </form>
+
+      <% if(typeof errors !="undefined" ){ %>
+        <ul>
+      
+          <% errors.forEach(error=>{ %>
+      
+            <li>
+              <%= error.msg %>
+            </li>
+      
+          <% }) %>
+      
+        </ul>
+      <% } %>
+    </div>
+
+  </body>
+</html>
